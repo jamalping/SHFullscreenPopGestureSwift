@@ -307,7 +307,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
     }
     
     //UIGestureRecognizerDelegate
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if self.sh_scrollViewPopGestureRecognizerEnable, self.contentOffset.x <= 0, let gestureDelegate = otherGestureRecognizer.delegate {
             if gestureDelegate.isKind(of: _SHFullscreenPopGestureRecognizerDelegate.self) {
                 return true
